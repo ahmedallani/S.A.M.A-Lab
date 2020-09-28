@@ -13,12 +13,11 @@ login.post("/login", (req, res) => {
     "SELECT password FROM user WHERE username = " + '"' + user.username + '"';
   conn.query(sql, (err, data) => {
     if (err) throw err;
-    console.log(data[0].password)
+    console.log(data[0].password);
     var result = bcrypt.compareSync(user.password, data[0].password);
-    if (result === true) {
+    if (result) {
       res.send("logged in");
-    }
-    res.send("wrong pass");
+    } else res.send("wrong pass");
   });
   connection.end();
 });
