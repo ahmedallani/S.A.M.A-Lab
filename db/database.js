@@ -2,10 +2,13 @@ const mysql = require('mysql');
 const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
-connection.on((e)=>{
-    if(e){
-    console.log("error", e)
-    return false ;
+
+
+connection.connect((err) => {
+    if (err) {
+      console.error('error connecting: ' + err.stack);
+      return;
     }
-    console.log('DATABASE Conected!');
-});
+   
+    console.log('connected as id ' + connection.threadId);
+  });
