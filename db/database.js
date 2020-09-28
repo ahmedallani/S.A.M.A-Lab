@@ -1,11 +1,22 @@
-const mysql = require('mysql');
-const mysqlConfig = require('./config.js');
+const mysql = require("mysql");
+const mysqlConfig = require("./config.js");
 
 const connection = mysql.createConnection(mysqlConfig);
-connection.on((e)=>{
-    if(e){
-    console.log("error", e)
-    return false ;
-    }
-    console.log('DATABASE Conected!');
-});
+
+//inserting a new project in the database 
+const createProject =function (name, description){
+  return new Promise((resolve, reject) => {
+    connection.query(
+      `INSERT INTO projects (name , description) VALUES (${name}, ${description})`,
+      (e, result) => {
+        if (e) {
+          console.log(e);
+          return reject();
+        }
+        resolve (result);
+      }
+    );
+  });
+}
+
+module.exports.createProject = createProject;
