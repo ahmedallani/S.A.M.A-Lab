@@ -16,9 +16,12 @@ login.post("/login", (req, res) => {
     console.log(data[0].password);
     var result = bcrypt.compareSync(user.password, data[0].password);
     if (result) {
+      console.log("logged in");
       res.send("logged in");
-      res.redirect("/home")
-    } else res.send("wrong pass");
+      //   res.redirect("/home");
+    } else {
+      res.send("wrong pass");
+    }
   });
   connection.end();
 });

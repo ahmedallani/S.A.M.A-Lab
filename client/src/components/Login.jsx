@@ -9,20 +9,15 @@ export class Login extends React.Component {
       username: "",
       password: "",
     };
-    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChangePass = this.handleChangePass.bind(this);
   }
 
-  handleChangeName(e) {
+  handleChange(e) {
+    e.preventDefault();
+    const { name, value } = e.target;
     this.setState({
-      username: e.target.value,
-    });
-  }
-
-  handleChangePass(e) {
-    this.setState({
-      password: e.target.value,
+      [name]: value,
     });
   }
 
@@ -43,18 +38,10 @@ export class Login extends React.Component {
       <div>
         <h1>login</h1>
         <form onSubmit={this.handleSubmit}>
-          <label>username</label>
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.handleChangeName}
-          />
-          <label>password</label>
-          <input
-            type="text"
-            value={this.state.password}
-            onChange={this.handleChangePass}
-          />
+          <label htmlFor="username">username</label>
+          <input type="text" name="username" onChange={this.handleChange} />
+          <label htmlFor="password">password</label>
+          <input type="password" name="password" onChange={this.handleChange} />
           <input type="submit" value="submit" />
         </form>
       </div>
