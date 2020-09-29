@@ -1,5 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var signup = require("../routes/signup.js");
+var login = require("../routes/login")
 
 const db = require('../db/database.js');
 
@@ -8,6 +10,9 @@ var app = express();
 
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
+app.use("/", signup);
+app.use("/", login);
+
 
 
 

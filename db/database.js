@@ -19,4 +19,14 @@ const createProject =function (name, description){
   });
 }
 
-module.exports.createProject = createProject;
+connection.connect((err) => {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+
+  console.log("connected as id " + connection.threadId);
+});
+
+module.exports.connection = connection;
+module.exports.createProject=createProject;
