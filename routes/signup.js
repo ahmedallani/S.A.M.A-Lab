@@ -3,7 +3,7 @@ var conn = require("../db/database.js");
 var bcrypt = require("bcryptjs");
 var salt = bcrypt.genSaltSync(10);
 
-var hash = (pass) => bcrypt.hashSync(pass, salt);
+const hash = (pass) => bcrypt.hashSync(pass, salt);
 
 signup.post("/users", (req, res) => {
   console.log(req.body);
@@ -20,10 +20,9 @@ signup.post("/users", (req, res) => {
     if (err) throw err;
     console.log(data);
   });
-  conn.end();
+
   res.send(user);
+  res.redirect("/login");
 });
-
-
 
 module.exports = signup;

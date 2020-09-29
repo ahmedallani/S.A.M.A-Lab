@@ -17,6 +17,7 @@ login.post("/login", (req, res) => {
     var result = bcrypt.compareSync(user.password, data[0].password);
     if (result) {
       res.send("logged in");
+      res.redirect("/home")
     } else res.send("wrong pass");
   });
   connection.end();

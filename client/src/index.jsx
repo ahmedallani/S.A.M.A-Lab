@@ -1,14 +1,14 @@
 import ReactDOM from "react-dom";
-
 import React from "react";
+import App from "./components/App.jsx";
 
-export class App extends React.Component {
+export class Index extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello world</h1>
+        <App />
       </div>
     );
   }
 }
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<Index />, document.getElementById("app"));
