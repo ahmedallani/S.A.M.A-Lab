@@ -1,16 +1,20 @@
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require("express");
+const bodyParser = require("body-parser");
+const new_org = require("../routes/add_organ.js")
+const new_feed = require("../routes/add_feed.js")
 var signup = require("../routes/signup.js");
-var login = require("../routes/login")
+var login = require("../routes/login.js")
+
 
 const port = 3000;
-var app = express();
+const app = express();
 
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
+app.use("/",new_org)
+app.use("/",new_feed)
 app.use("/", signup);
 app.use("/", login);
-
 
 app.listen(process.env.PORT || port, function () {
   console.log(`listening on port ${port}!`);
