@@ -7,7 +7,7 @@ const connection = mysql.createConnection(mysqlConfig);
 const createProject =function (name, description){
   return new Promise((resolve, reject) => {
     connection.query(
-      `INSERT INTO projects (name , description) VALUES (${name}, ${description})`,
+      `INSERT INTO projects set ?`,{name,description},
       (e, result) => {
         if (e) {
           console.log(e);
