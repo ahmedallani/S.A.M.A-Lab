@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const new_org = require("../routes/add_organ.js")
 const new_feed = require("../routes/add_feed.js")
+const organizationRouter = require("../routes/organization.js")
 var signup = require("../routes/signup.js");
 var login = require("../routes/login.js")
 
@@ -13,8 +13,8 @@ var app = express();
 
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
-app.use("/",new_org)
 app.use("/",new_feed)
+app.use("/organization", organizationRouter)
 app.use("/", signup);
 app.use("/", login);
 
