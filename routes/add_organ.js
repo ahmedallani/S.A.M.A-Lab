@@ -1,4 +1,4 @@
-var new_org = require ("express").Router()
+const new_org = require ("express").Router()
 const conn = require("../db/database.js")
 new_org.post("/create_organization",(req,res) => {
     console.log(req.body)

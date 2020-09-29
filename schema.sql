@@ -11,6 +11,6 @@ USE project;
    name varchar(50) NOT NULL UNIQUE,
    description varchar(250) NOT NULL,
    field varchar(100) NOT NULL,
-   serial int NOT NULL UNIQUE,
+   serial int(4) NOT NULL UNIQUE,
    PRIMARY KEY (ID)
 );
