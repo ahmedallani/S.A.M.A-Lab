@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 /**
  * route for adding new member
  */
-app('/project/add_member', async (req, res) => {
-  var result = Project.add
+app.get('/project/add_member', async (req, res) => {
+  //var result = Project.add
 })
 
 
