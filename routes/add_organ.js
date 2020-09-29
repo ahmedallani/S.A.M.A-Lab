@@ -22,7 +22,4 @@ res.send(organization);
 })
 
 
-
-
-
 module.exports = new_org;

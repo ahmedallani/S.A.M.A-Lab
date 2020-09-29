@@ -1,13 +1,16 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var new_org = require("../routes/add_organ.js")
+const express = require("express");
+const bodyParser = require("body-parser");
+const new_org = require("../routes/add_organ.js")
+const new_feed = require("../routes/add_feed.js")
 
 const port = 3000;
-var app = express();
+const app = express();
 
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
 app.use("/",new_org)
+app.use("/",new_feed)
+
 app.listen(process.env.PORT || port, function () {
   console.log(`listening on port ${port}!`);
 });

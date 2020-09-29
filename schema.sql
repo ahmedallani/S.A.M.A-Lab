@@ -14,3 +14,11 @@ USE project;
    serial int(4) NOT NULL UNIQUE,
    PRIMARY KEY (ID)
 );
+
+ CREATE TABLE feed (
+   id int NOT NULL AUTO_INCREMENT,
+   name varchar(50) NOT NULL UNIQUE,
+   description varchar(250) NOT NULL,
+   type varchar(50) NOT NULL,
+   PRIMARY KEY (ID)
+);
