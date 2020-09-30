@@ -8,6 +8,7 @@ let organization = [
     req.body.field,
     req.body.serial,
 ]
+/*************Create New Organization********** */
 let sql = "INSERT INTO organizations (name, description, field, serial) VALUES (? ,? ,? ,?)";
 conn.connection.query(sql, organization, (err, data) => {
 
@@ -25,7 +26,7 @@ res.send(organization);
  * 
  * @param {}
  */
-
+/***********Delete organization ************** */
 router.delete("/delete/:id",(req,res)=>{
     console.log(req.body)
 let sql_delete = "DELETE FROM organizations WHERE ID = ?";
@@ -37,6 +38,7 @@ conn.connection.query(sql_delete,[req.params.id],(err, data)=>{
 
 
 })
+/***********Update organizations************* */
 router.put("/update/:id",(req,res)=>{
     console.log(req.body)
 
