@@ -11,7 +11,7 @@ CREATE TABLE users (
   last_name varchar(255) NOT NULL UNIQUE,
   password varchar(255) NOT NULL ,
   PRIMARY KEY (ID)
-);
+);git 
  CREATE TABLE organizations (
    id int NOT NULL AUTO_INCREMENT,
    name varchar(50) NOT NULL UNIQUE,

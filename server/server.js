@@ -26,12 +26,29 @@ app.post('/saveProject',async (req,res)=>{
 
 })
 
-app.get('org_project',(req,res)=>{
-  console.log("req", req);
-  
+app.get('/get_orgOfUer/:id',async (req,res)=>{
+console.log("req", req.params.id)
+  try{
+    const userOrg = await db.getOrg(req.params.id);
+    console.log(userOrg)
+    res.send (userOrg);
+  }catch(e){
+    res.send(e)
+    console.log(e)
+  }
 })
 
-app.get('get')
+app.get('/get_projOfOrg/:id',async (req,res)=>{
+  console.log("req", req.params.id)
+    try{
+      const orgproj = await db.getProj (req.params.id);
+      console.log(orgproj)
+      res.send (orgproj);
+    }catch(e){
+      res.send(e)
+      console.log(e)
+    }
+  })
 
 app.listen( port,  ()=> {
   console.log(`listening on port ${port}!`);
