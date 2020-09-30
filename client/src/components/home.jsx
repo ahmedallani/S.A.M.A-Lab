@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Navbar from "./navbar.jsx";
+import SideBar from './sideBar.jsx'
 class home extends React.Component {
   constructor(props) {
     super(props);

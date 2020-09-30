@@ -1,4 +1,4 @@
 node_modules
 db/config.js
-bundle.js
-client/template/*
+/client/dist/bundle.js
+client/template
