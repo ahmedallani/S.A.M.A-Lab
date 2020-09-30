@@ -1,7 +1,5 @@
 import React from "react";
-import Switch from "react-bootstrap/esm/Switch";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 var SideBar = () => (
@@ -25,10 +23,10 @@ var SideBar = () => (
 
     {/* Nav Item - Dashboard */}
     <li className="nav-item">
-      <a className="nav-link" href="index.html">
-        <i className="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span>
-      </a>
+      <Link to="/" className="nav-link" >
+      <i className="fas fa-fw fa-home"></i>
+        <span>Home</span>
+      </Link>
     </li>
 
     {/* Divider */}
@@ -47,7 +45,7 @@ var SideBar = () => (
         aria-expanded="true"
         aria-controls="collapseTwo"
       >
-        <i className="fas fa-fw fa-cog"></i>
+        <i className="fas fa-fw fa-building"></i>
         <span>My organizations</span>
       </a>
 
@@ -60,10 +58,10 @@ var SideBar = () => (
         <div className="bg-white py-2 collapse-inner rounded">
           <h6 className="collapse-header">Organizations:</h6>
           <Link to="/organizations" className="collapse-item">
-            Show all
+            Show all organizations
           </Link>
           <Link to="/organizations/new" className="collapse-item">
-            Add new
+            Add new organization
           </Link>
         </div>
       </div>
@@ -90,12 +88,12 @@ var SideBar = () => (
       >
         <div className="bg-white py-2 collapse-inner rounded">
           <h6 className="collapse-header">Projects:</h6>
-          <a className="collapse-item" href="utilities-color.html">
-            Show all
-          </a>
-          <a className="collapse-item" href="utilities-border.html">
-            Add new
-          </a>
+          <Link to="/projects" className="collapse-item">
+            Show all projects
+          </Link>
+          <Link to="/projects/new" className="collapse-item">
+            Add new project
+          </Link>
         </div>
       </div>
     </li>

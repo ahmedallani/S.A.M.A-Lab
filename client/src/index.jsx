@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Login from "./components/login.jsx";
-import Signup from "./components/signup.jsx";
-import Home from "./components/home.jsx";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+import DashBoard from "./components/DashBoard.jsx";
 
 
 
 export class App extends React.Component {
   render() {
     return (
-      <Home />
+      <DashBoard />
     );
   }
 };
