@@ -26,8 +26,9 @@ function LanPage  (){
                                 </div>
                                 <div className="col-lg-5 pt-5">
                                     <div className="hero-banner__content">
-                                        <h1>Advanced software made simple</h1>
-                                        <p>Vel aliquam quis, nulla pede mi commodo tristique nam hac Luctun torquent velit felis commodo pellentesque nulla cras vel aliqua quisan nulla pede mi commoda</p>
+                                        <h1>Project Managment Tools</h1>
+                                            <p>Project scheduling is a mechanism to communicate what tasks need to get done and which organizational resources will be allocated to complete those tasks in what timeframe. A project schedule is a document collecting all the work needed to deliver the project on time.</p>
+
                                         <a className="button bg" href="#">Sign Up</a>
                                         <a className="button bg" href="#">Login</a>
                                     </div>
