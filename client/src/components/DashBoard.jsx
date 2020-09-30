@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import SideBar from "./SideBar.jsx";
-import Logout from "../authentication/Logout.jsx";
+import Logout from "./Logout.jsx";
 import Footer from "./Footer.jsx";
 import Content from "./Content.jsx";
 class DashBoard extends React.Component {

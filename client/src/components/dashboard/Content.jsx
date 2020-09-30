@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import OrganizationsList from "./OrganizationsList.jsx";
-import AddOrganization from "./AddOrganization.jsx";
-import ProjectsList from "./ProjectsList.jsx"
-import AddProject from "./AddProject.jsx";
+import OrganizationsList from "../organizations/OrganizationsList.jsx";
+import AddOrganization from "../organizations/AddOrganization.jsx";
+import ProjectsList from "../projects/ProjectsList.jsx"
+import AddProject from "../projects/AddProject.jsx";
 import Home from "./Home.jsx";
 
 var Content = () => (
