@@ -1,6 +1,6 @@
-const new_feed = require ("express").Router()
+const router = require ("express").Router()
 const conn = require("../db/database.js")
-new_feed.post("/create_feed",(req,res) => {
+router.post("/create_feed",(req,res) => {
     console.log(req.body)
 let feed = [
     req.body.name,
@@ -23,7 +23,7 @@ res.send(feed);
 
 
 
-new_feed.get("/get_issues", (req,res)=>{
+router.get("/get_issues", (req,res)=>{
 console.log(req.body)
 let sql_issues = "SELECT * FROM feed WHERE type = 'issues'";
 conn.query(sql_issues ,(err,data)=>{
@@ -34,7 +34,7 @@ conn.query(sql_issues ,(err,data)=>{
 })
 })
 
-new_feed.get("/get_feacher", (req,res)=>{
+router.get("/get_feacher", (req,res)=>{
 console.log(req.body)
 let sql_issues = "SELECT * FROM feed WHERE type = 'feacher'";
 conn.query(sql_issues ,(err,data)=>{
@@ -47,4 +47,4 @@ conn.query(sql_issues ,(err,data)=>{
 
 
 
-module.exports = new_feed;
+module.exports = router;

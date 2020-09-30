@@ -1,4 +1,4 @@
-const router = require ("express").Router()
+ const router = require ("express").Router()
 const conn = require("../db/database.js")
 router.post("/create",(req,res) => {
     console.log(req.body)
