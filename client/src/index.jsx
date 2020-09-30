@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import LanPage from "./components/LanPage.jsx";
+
 
 import Login from "./components/authentication/Login.jsx";
 import Signup from "./components/authentication/Signup.jsx";
@@ -7,6 +9,7 @@ import DashBoard from "./components/dashboard/DashBoard.jsx";
 
 
 
+>>>>>>> master
 class App extends React.Component {
  
 
@@ -14,7 +17,6 @@ class App extends React.Component {
 
   render() {
     return (
-
       <DashBoard />
     );
   }
