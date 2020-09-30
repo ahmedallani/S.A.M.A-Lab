@@ -7,9 +7,9 @@ class Home extends React.Component {
 
   render() {
     return (
-        <div>
+      <div>
         <h1 className="h3 mb-4 text-gray-800">Home</h1>
-       <p>this is home</p>
+        <p>this is home</p>
       </div>
     );
   }
