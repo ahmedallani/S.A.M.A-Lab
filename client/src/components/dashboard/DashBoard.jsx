@@ -5,7 +5,7 @@ import Navbar from "./Navbar.jsx";
 import SideBar from "./SideBar.jsx";
 import Logout from "./Logout.jsx";
 import Footer from "./Footer.jsx";
-import Content from "./Content.jsx";
+import Content from "../Content.jsx";
 class DashBoard extends React.Component {
   constructor(props) {
     super(props);
