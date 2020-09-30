@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Navbar from "./navbar.jsx";
-import SideBar from "./sideBar.jsx";
-import Logout from "./logout.jsx";
-import Footer from "./footer.jsx";
-import Content from "./content.jsx";
-class home extends React.Component {
+import Navbar from "./Navbar.jsx";
+import SideBar from "./SideBar.jsx";
+import Logout from "./Logout.jsx";
+import Footer from "./Footer.jsx";
+import Content from "./Content.jsx";
+class DashBoard extends React.Component {
   constructor(props) {
     super(props);
 
@@ -64,4 +64,4 @@ class home extends React.Component {
   }
 }
 
-export default home;
+export default DashBoard;
