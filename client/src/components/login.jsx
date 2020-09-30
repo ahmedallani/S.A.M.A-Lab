@@ -33,7 +33,7 @@ class Login extends React.Component {
           </div>
         </form>
         <p className="text-center">
-          <a href="#">Create an Account</a>
+          <a href="#" onClick={()=>{}}>Create an Account</a>
         </p>
       </div>
     );
