@@ -13,7 +13,7 @@ var app = express();
 
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
-app.use("/feed",feed)
+app.use("/feed", feed)
 app.use("/organization", organizationRouter)
 app.use("/", signup);
 app.use("/", login);
