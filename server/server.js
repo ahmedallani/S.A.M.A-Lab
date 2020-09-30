@@ -18,9 +18,6 @@ app.use("/",new_feed)
 app.use("/", signup);
 app.use("/", login);
 
-
-
-
 app.post('/saveProject',async (req,res)=>{
   console.log('*********',req.body);
   try{
@@ -28,6 +25,13 @@ app.post('/saveProject',async (req,res)=>{
   }catch(e){console.log(e)}
 
 })
+
+app.get('org_project',(req,res)=>{
+  console.log("req", req);
+  
+})
+
+app.get('get')
 
 app.listen( port,  ()=> {
   console.log(`listening on port ${port}!`);
