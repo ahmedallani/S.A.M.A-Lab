@@ -1,13 +1,14 @@
-import ReactDOM from "react-dom";
-
+import $ from "jquery";
 import React from "react";
+import ReactDOM from "react-dom";
+import Login from "./components/login.jsx";
+import Signup from "./components/signup.jsx";
+import Home from "./components/home.jsx";
 
 export class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Hello world</h1>
-      </div>
+      <Signup />
     );
   }
 }
