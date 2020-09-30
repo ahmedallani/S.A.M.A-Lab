@@ -1,5 +1,5 @@
 var signup = require("express").Router();
-var conn = require("../db/database.js");
+var db = require("../db/database.js");
 var bcrypt = require("bcryptjs");
 var salt = bcrypt.genSaltSync(10);
 
@@ -16,7 +16,7 @@ signup.post("/users", (req, res) => {
   ];
   let sql =
     "INSERT INTO user (username, first_name, last_name, email, password) VALUES (? ,? ,? ,? ,?)";
-  conn.query(sql, user, (err, data) => {
+  db.connection.query(sql, user, (err, data) => {
     if (err) throw err;
     console.log(data);
   });
