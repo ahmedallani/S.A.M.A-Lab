@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const Project = require('./models/project')
 const new_org = require("../routes/add_organ.js")
 const new_feed = require("../routes/add_feed.js")
 var signup = require("../routes/signup.js");
@@ -10,6 +11,7 @@ const db = require('../db/database.js');
 
 const port =process.env.PORT || 3000;
 var app = express();
+
 
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
@@ -50,6 +52,16 @@ app.get('/get_projOfOrg/:id',async (req,res)=>{
     }
   })
 
-app.listen( port,  ()=> {
+/**
+ * route for adding new member
+ */
+app.get('/project/add_member', async (req, res) => {
+  //var result = Project.add
+})
+
+
+
+
+app.listen(process.env.PORT || port, function () {
   console.log(`listening on port ${port}!`);
 });

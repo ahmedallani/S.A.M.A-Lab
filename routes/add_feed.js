@@ -9,16 +9,12 @@ let feed = [
     
 ]
 let sql = "INSERT INTO feed (name,description,type) VALUES (? ,? ,?)";
-conn.query(sql, feed, (err, data) => {
-
+conn.connection.query(sql, feed, (err, data) => {
     if (err) 
         throw err;
-    
     console.log(data);
 });
-
 res.send(feed);
-
 })
 
 
