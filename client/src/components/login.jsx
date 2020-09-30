@@ -8,7 +8,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="login-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form action="#" method="post" >
           <h2 className="text-center">Log in</h2>
           <div className="form-group">
             <input
@@ -27,7 +27,7 @@ class Login extends React.Component {
             />
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary btn-block">
+            <button type="submit" className="btn btn-primary btn-block" >
               Log in
             </button>
           </div>

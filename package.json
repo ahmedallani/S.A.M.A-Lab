@@ -27,6 +27,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@popperjs/core": "^2.5.3",
     "body-parser": "^1.17.2",
     "bootstrap": "^4.5.2",
     "express": "^4.15.0",
