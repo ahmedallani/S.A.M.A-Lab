@@ -8,7 +8,7 @@ import Home from "./components/home.jsx";
 export class App extends React.Component {
   render() {
     return (
-      <Signup />
+      <Home />
     );
   }
 }
