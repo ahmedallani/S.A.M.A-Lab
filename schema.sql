@@ -11,30 +11,15 @@ CREATE TABLE users (
   last_name varchar(255) NOT NULL UNIQUE,
   password varchar(255) NOT NULL ,
   PRIMARY KEY (ID)
-);git 
+);
  CREATE TABLE organizations (
    id int NOT NULL AUTO_INCREMENT,
    name varchar(50) NOT NULL UNIQUE,
    description varchar(250) NOT NULL,
-   field varchar(100) NOT NULL,
-   serial int(4) NOT NULL UNIQUE,
    userID int NOT NULL,
    PRIMARY KEY (ID),
    FOREIGN KEY (userID) REFERENCES users(id)
 );
-<<<<<<< HEAD
-=======
- CREATE TABLE organizations (
-   id int NOT NULL AUTO_INCREMENT,
-   name varchar(50) NOT NULL UNIQUE,
-   description varchar(250) NOT NULL,
-   field varchar(100) NOT NULL,
-   serial int(4) NOT NULL UNIQUE,
-   userID int NOT NULL,
-   PRIMARY KEY (ID),
-   FOREIGN KEY (userID) REFERENCES users(id)
-);
->>>>>>> c0f95c7140055ffc2332f243bcdcc3d68aff931e
 CREATE TABLE projects (
   id int NOT NULL AUTO_INCREMENT,
   name varchar(50) NOT NULL,
