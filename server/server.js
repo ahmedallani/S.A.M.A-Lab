@@ -1,67 +1,30 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-
-const feed = require("../routes/feed.js")
-const organizationRouter = require("../routes/organization.js")
-
-var signup = require("../routes/signup.js");
-var login = require("../routes/login.js")
-
-
+var express = require("express");
+var bodyParser = require("body-parser");
 const db = require('../db/database.js');
-
-const port =process.env.PORT || 3000;
-var app = express();
-
+const port = 3000;
+const app = express();
 
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
-app.use("/feed", feed)
-app.use("/organization", organizationRouter)
-app.use("/", signup);
-app.use("/", login);
 
-app.post('/saveProject',async (req,res)=>{
-  console.log('*********',req.body);
+app.post("/create_organization",async (req,res)=>{
   try{
-    await db.createProject(req.body.name , req.body.description)
+    await db.createOrganization(req.body.userID,req.body.name,req.body.description);
   }catch(e){console.log(e)}
-
 })
 
-app.get('/get_orgOfUer/:id',async (req,res)=>{
-console.log("req", req.params.id)
+app.get("/organization/:userID",async (req,res)=>{
   try{
-    const userOrg = await db.getOrg(req.params.id);
-    console.log(userOrg)
-    res.send (userOrg);
-  }catch(e){
-    res.send(e)
-    console.log(e)
-  }
+    const data = await db.getOrganization(req.params.userID);
+    res.send(data)
+  }catch(e){console.log(e)}
 })
 
-app.get('/get_projOfOrg/:id',async (req,res)=>{
-  console.log("req", req.params.id)
-    try{
-      const orgproj = await db.getProj (req.params.id);
-      console.log(orgproj)
-      res.send (orgproj);
-    }catch(e){
-      res.send(e)
-      console.log(e)
-    }
-  })
-
-/**
- * route for adding new member
- */
-app.get('/project/add_member', async (req, res) => {
-  //var result = Project.add
+app.post("/deleteOrg",async (req,res)=>{
+  try{
+    await db.deleteOrganisation(req.body.userID,req.body.id)
+  }catch(e){console.log(e)}
 })
-
-
-
 
 app.listen(process.env.PORT || port, function () {
   console.log(`listening on port ${port}!`);
