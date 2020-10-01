@@ -1,9 +1,8 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 class ProjectsList extends React.Component {
   constructor() {
     super();
-
   }
 
   render() {
@@ -17,11 +16,16 @@ class ProjectsList extends React.Component {
             </h6>
           </div>
           <div className="card-body">
-            <ul>
-              <li>Project 1</li>
-              <li>Project 2</li>
-              <li>Project 3</li>
-              <li>Project 4</li>
+            <ul className="list-group">
+              <li className="list-group-item">
+                <Link to="/projects/1">Project 1</Link>
+              </li>
+              <li className="list-group-item">
+                <Link to="/projects/2">Project 2</Link>
+              </li>
+              <li className="list-group-item">
+                <Link to="/projects/3">Project 3</Link>
+              </li>
             </ul>
           </div>
         </div>
