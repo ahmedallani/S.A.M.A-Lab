@@ -4,11 +4,16 @@ CREATE DATABASE project;
 
 USE project;
 
+<<<<<<< HEAD
 CREATE TABLE users (
+=======
+CREATE TABLE user (
+>>>>>>> c2bc32deeebf4f196d8657c4e7f25d1048091dd1
   id int NOT NULL AUTO_INCREMENT,
   username varchar(255) NOT NULL UNIQUE,
   first_name varchar(255) NOT NULL UNIQUE,
   last_name varchar(255) NOT NULL UNIQUE,
+<<<<<<< HEAD
   password varchar(255) NOT NULL ,
   PRIMARY KEY (ID)
 );
@@ -39,3 +44,11 @@ CREATE TABLE projects (
    PRIMARY KEY (ID),
    FOREIGN KEY (projectID) REFERENCES projects(id)
 );
+=======
+  email varchar(100) NOT NULL UNIQUE ,
+  password varchar(255) NOT NULL ,
+  PRIMARY KEY (ID)
+);
+
+
+>>>>>>> c2bc32deeebf4f196d8657c4e7f25d1048091dd1

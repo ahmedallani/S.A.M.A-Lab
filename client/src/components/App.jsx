@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import Login from "./login.jsx";
 import Signup from "./signup.jsx";
 import Home from "./home.jsx";
@@ -42,6 +43,18 @@ export class App extends React.Component {
         </div>
       );
     }
+=======
+import Login from "./Login.jsx";
+import Signup from "./Signup.jsx";
+
+export class App extends React.Component {
+  render() {
+    return (
+      <div className="center">
+        <Login />
+      </div>
+    );
+>>>>>>> c2bc32deeebf4f196d8657c4e7f25d1048091dd1
   }
 }
 
