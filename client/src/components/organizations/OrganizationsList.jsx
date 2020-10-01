@@ -1,8 +1,21 @@
 import React from "react";
-
+import $ from "jquery";
+import OrganizationDetail from './OrganizationDetail.jsx'
 class OrganizationsList extends React.Component {
   constructor() {
     super();
+    this.state={
+      data : [],
+      userID :1
+    }
+  }
+
+  getorganization(){
+    $.get(`organization/${this.state.userID}`,(data)=>{
+      }).done((data=>{this.setState({data})}))
+  }
+  componentDidMount(){
+    this.getorganization();
   }
 
   render() {
@@ -16,11 +29,10 @@ class OrganizationsList extends React.Component {
             </h6>
           </div>
           <div className="card-body">
-            <ul>
-              <li>Organization 1</li>
-              <li>Organization 2</li>
-              <li>Organization 3</li>
-              <li>Organization 4</li>
+            <ul className="list-group">
+              {this.state.data.map((ele,i)=>{
+                return <OrganizationDetail key={i} org={ele} f={()=>this.getorganization.bind(this)()} />
+              })}
             </ul>
           </div>
         </div>
