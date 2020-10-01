@@ -1,10 +1,10 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 class OrganizationsList extends React.Component {
   constructor() {
     super();
   }
-
+  
   render() {
     return (
       <div>
@@ -17,11 +17,21 @@ class OrganizationsList extends React.Component {
           </div>
           <div className="card-body">
             <ul className="list-group">
-              <li className="list-group-item">Cras justo odio</li>
-              <li className="list-group-item">Dapibus ac facilisis in</li>
-              <li className="list-group-item">Morbi leo risus</li>
-              <li className="list-group-item">Porta ac consectetur ac</li>
-              <li className="list-group-item">Vestibulum at eros</li>
+              <li className="list-group-item">
+                <Link to="/organizations/1" >Organization 1</Link>
+              </li>
+              <li className="list-group-item">
+                <Link to="/organizations/2">Organization 2</Link>
+              </li>
+              <li className="list-group-item">
+                <Link to="/organizations/3">Organization 3</Link>
+              </li>
+              <li className="list-group-item">
+                <Link to="/organizations/4">Organization 4</Link>
+              </li>
+              <li className="list-group-item">
+                <Link to="/organizations/5">Organization 5</Link>
+              </li>
             </ul>
           </div>
         </div>
