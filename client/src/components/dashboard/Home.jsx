@@ -18,6 +18,7 @@ class Home extends React.Component {
                 </h6>
               </div>
               <div className="card-body">
+
                 <ul className="list-group">
                   <li className="list-group-item">
                     <Link to="/organizations/1">Organization 1</Link>
@@ -34,6 +35,7 @@ class Home extends React.Component {
                   <li className="list-group-item">
                     <Link to="/organizations/5">Organization 5</Link>
                   </li>
+
                 </ul>
               </div>
             </div>
@@ -46,6 +48,7 @@ class Home extends React.Component {
                 </h6>
               </div>
               <div className="card-body">
+
                 <ul className="list-group">
                   <li className="list-group-item">
                     <Link to="/projects/1">Project 1</Link>
@@ -56,6 +59,7 @@ class Home extends React.Component {
                   <li className="list-group-item">
                     <Link to="/projects/3">Project 3</Link>
                   </li>
+
                 </ul>
               </div>
             </div>
