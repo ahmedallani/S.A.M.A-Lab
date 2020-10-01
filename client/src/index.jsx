@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 
 import App from "./components/App.jsx";
 
-export class Index extends React.Component {
-  render() {
-    return (
-      <div>
-        <App />
-      </div>
-    );
-  }
-}
-ReactDOM.render(<Index />, document.getElementById("app"));
+// class Index extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <App />
+//       </div>
+//     );
+//   }
+// }
+
+ReactDOM.render(<App />, document.getElementById("app"));

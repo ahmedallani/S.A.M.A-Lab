@@ -1,42 +1,47 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-<<<<<<< HEAD
-const Project = require('./models/project')
+
 var signup = require("../routes/signup.js");
 var login = require("../routes/login");
 
-<<<<<<< HEAD
-=======
-=======
-var signup = require("../routes/signup.js");
-var login = require("../routes/login");
->>>>>>> c2bc32deeebf4f196d8657c4e7f25d1048091dd1
->>>>>>> 7c7bca0e8e831b4e1772c60a519ec1608fb39539
-
+const db = require("../db/database.js");
 const port = 3000;
 const app = express();
 
 app.use(bodyParser.json());
 app.use("/", signup);
 app.use("/", login);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7c7bca0e8e831b4e1772c60a519ec1608fb39539
 
 app.use(express.static(__dirname + "/../client/dist"));
 
-/**
- * route for adding new member
- */
-app.get('/project/add_member', async (req, res) => {
-  //var result = Project.add
-})
+app.post("/create_organization", async (req, res) => {
+  try {
+    await db.createOrganization(
+      req.body.userID,
+      req.body.name,
+      req.body.description
+    );
+  } catch (e) {
+    console.log(e);
+  }
+});
 
+app.get("/organization/:userID", async (req, res) => {
+  try {
+    const data = await db.getOrganization(req.params.userID);
+    res.send(data);
+  } catch (e) {
+    console.log(e);
+  }
+});
 
-
-=======
->>>>>>> c2bc32deeebf4f196d8657c4e7f25d1048091dd1
+app.post("/deleteOrg", async (req, res) => {
+  try {
+    await db.deleteOrganisation(req.body.userID, req.body.id);
+  } catch (e) {
+    console.log(e);
+  }
+});
 
 app.listen(process.env.PORT || port, function () {
   console.log(`listening on port ${port}!`);

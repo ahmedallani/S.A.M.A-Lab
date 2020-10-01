@@ -1,13 +1,10 @@
 import React from "react";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7c7bca0e8e831b4e1772c60a519ec1608fb39539
-import Login from "./login.jsx";
-import Signup from "./signup.jsx";
-import Home from "./home.jsx";
 
-export class App extends React.Component {
+import Login from "./authentication/Login.jsx";
+import Signup from "./authentication/Signup.jsx";
+import DashBoard from "./dashboard/DashBoard.jsx";
+
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -42,25 +39,10 @@ export class App extends React.Component {
     else if (this.state.redirected === "/home") {
       return (
         <div>
-          <Home username={this.state.username} />
+          <DashBoard /* username={this.state.username} */ />
         </div>
       );
     }
-<<<<<<< HEAD
-=======
-=======
-import Login from "./Login.jsx";
-import Signup from "./Signup.jsx";
-
-export class App extends React.Component {
-  render() {
-    return (
-      <div className="center">
-        <Login />
-      </div>
-    );
->>>>>>> c2bc32deeebf4f196d8657c4e7f25d1048091dd1
->>>>>>> 7c7bca0e8e831b4e1772c60a519ec1608fb39539
   }
 }
 
