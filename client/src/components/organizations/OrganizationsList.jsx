@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import $ from "jquery";
 import OrganizationDetail from './OrganizationDetail.jsx'
+
 class OrganizationsList extends React.Component {
   constructor() {
     super();
@@ -17,7 +19,7 @@ class OrganizationsList extends React.Component {
   componentDidMount(){
     this.getorganization();
   }
-
+  
   render() {
     return (
       <div>
@@ -30,6 +32,11 @@ class OrganizationsList extends React.Component {
           </div>
           <div className="card-body">
             <ul className="list-group">
+
+              <li className="list-group-item">
+                <Link to="/organizations/1" >Organization 1</Link>
+              </li>
+          
               {this.state.data.map((ele,i)=>{
                 return <OrganizationDetail key={i} org={ele} f={()=>this.getorganization.bind(this)()} />
               })}

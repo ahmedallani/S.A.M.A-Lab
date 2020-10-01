@@ -5,6 +5,7 @@ import AddOrganization from "../organizations/AddOrganization.jsx";
 import ProjectsList from "../projects/ProjectsList.jsx"
 import AddProject from "../projects/AddProject.jsx";
 import Home from "./Home.jsx";
+import OrganizationDetail from "../organizations/OrganizationDetail.jsx";
 
 var Content = () => (
   <div>
@@ -15,6 +16,7 @@ var Content = () => (
       <Route exact path="/organizations">
         <OrganizationsList />
       </Route>
+      <Route path="/oranizations/:id" component={OrganizationDetail} />
       <Route path="/organizations/new">
         <AddOrganization />
       </Route>
