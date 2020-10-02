@@ -15,10 +15,17 @@ signup.post("/users", (req, res) => {
   let sql =
     "INSERT INTO users (username, first_name, last_name, password) VALUES (? ,? ,? ,?)";
   db.connection.query(sql, user, (err, data) => {
-    if (err) console.error(err);
-    console.log(data);
+    if (err) {
+      console.error({err})
+      // __send 400/500 state if there is error
+      res.status(400).send(err);
+    };
+    // __you should send the user you get from the server
+    console.log({data});
+    // __don't send back the hash password
+    res.send(user);
   });
-  res.send(user);
+ 
 });
 
 module.exports = signup;

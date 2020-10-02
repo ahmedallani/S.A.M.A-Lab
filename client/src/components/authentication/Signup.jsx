@@ -42,6 +42,7 @@ class Signup extends React.Component {
       alert("the pass must be the same");
       return false;
     }
+    // __you should not post all the state
     axios
       .post("/users", this.state)
       .then((res) => {

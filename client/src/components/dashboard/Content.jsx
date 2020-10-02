@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import OrganizationsList from "../organizations/OrganizationsList.jsx";
+import OrganizationsList from "../organizations/OrganizationsList.jsx";// __you have many components
 import AddOrganization from "../organizations/AddOrganization.jsx";
 import ProjectsList from "../projects/ProjectsList.jsx"
 import AddProject from "../projects/AddProject.jsx";

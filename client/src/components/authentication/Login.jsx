@@ -26,8 +26,10 @@ class Login extends React.Component {
       .post("/login", this.state)
       .then((res) => {
         if (res.data === true) {
+          // __good work changing the path
           this.props.func(this.state.username, this.state.nextpath);
         } else {
+          // __feedback when login fail
           this.props.func(null, "/login");
         }
       })

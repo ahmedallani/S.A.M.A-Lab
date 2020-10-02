@@ -5,6 +5,7 @@ var bcrypt = require("bcryptjs");
 login.post("/login", (req, res) => {
   var user = req.body;
   console.log(user);
+  // __you should sperate the functions that connect with database
   let sql =
     "SELECT password FROM users WHERE username = " + '"' + user.username + '"';
   db.connection.query(sql, (err, data) => {

@@ -13,7 +13,8 @@ app.use("/", signup);
 app.use("/", login);
 
 app.use(express.static(__dirname + "/../client/dist"));
-
+// __add prefix like api before url
+// __create_organization doesn't return anything
 app.post("/create_organization", async (req, res) => {
   try {
     await db.createOrganization(
